@@ -10,6 +10,7 @@
 #import "Sort.h"
 #import "LinkedList.h"
 #import "Tree.h"
+#import "MergeArr.h"
 
 
 int main(int argc, const char * argv[]) {
