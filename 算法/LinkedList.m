@@ -91,10 +91,8 @@ void insertList(LinkList *list,int n,int value) {
 void deletList(LinkList *list,int n);
 ///> 链表反转  h 0 1 2 3 4 5 6 7 8 9
 LinkList* reverseList(LinkList*head) {
-    
     LinkList *node0 = head->next;
     LinkList *temp = node0;
-    
     if (head == NULL || node0 == NULL) {
         return head;
     }
@@ -107,10 +105,12 @@ LinkList* reverseList(LinkList*head) {
         head->next = node1;
         node1->next = temp;
         
+        ///< 指向下一个
         node0->next = node2;
+        ///< 保存now
         temp = node1;
     }
-        
+    
     return head;
 }
 

@@ -10,11 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef struct {
+typedef struct tree {
     char c;
-    struct BiTree *lBi;
-    struct BiTree *rBi;
-}BiTree;
+    struct tree *lBi;
+    struct tree *rBi;
+} BiTree;
 
 /// 二叉树 的遍历  前  中  后  反转 左右子叶交换
 @interface Tree : NSObject
