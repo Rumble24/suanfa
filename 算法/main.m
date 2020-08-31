@@ -31,5 +31,27 @@ int main(int argc, const char * argv[]) {
     printLinkList(list);
     NSLog(@"count %d",linkListCount(list));
 
+    
+    
     return 0;
 }
+
+/*
+ 
+ 9. 对数组arr内的元素组合进行全排列？
+ input: [1, 2, 3]
+ output: [123, 132, 213, 231, 312, 321]
+ 
+ 
+ 10.合并N个升序数组为一个升序数组？
+ input: [[Int]]
+ output: [Int]
+ 
+ 
+ 4.leetcode 134（https://leetcode-cn.com/problems/gas-station/）
+ 
+ 16，无重复字符的最长子串
+ 
+ 37.二分查找
+ 
+ */
