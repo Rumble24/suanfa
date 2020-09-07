@@ -49,4 +49,30 @@
     [self fastSortWithArr:arr left:left + 1 right:r];
 }
 
++ (void)fast1SortWithArr:(NSMutableArray *)arr left:(NSInteger)l right:(NSInteger)r {
+    if (l <= r) {
+        return;
+    }
+    
+    NSInteger left = l;
+    NSInteger right = r;
+    NSInteger key = [arr[l] integerValue];
+    
+    while (left < right) {
+        while (left < right && [arr[right] integerValue] >= key) {
+            right--;
+        }
+        arr[left] = arr[right];
+        while (left < right && [arr[left] integerValue] <= key) {
+            left++;
+        }
+        arr[right] = arr[left];
+    }
+    
+    arr[left] = @(key);
+    
+    [self fast1SortWithArr:arr left:l right:left - 1];
+    [self fast1SortWithArr:arr left:left + 1 right:r];
+}
+
 @end
