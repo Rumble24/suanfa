@@ -7,6 +7,7 @@
 //
 
 #import "Tree.h"
+#import "CStack.h"
 
 @implementation Tree
 
@@ -16,7 +17,7 @@
   D     E   F    G
 H  I  J  K
 */
-- (void)createTree {
+BiTree *createTree() {
     ////> 手动创建二叉树
     BiTree *BiH = (BiTree *)malloc(sizeof(BiTree));
     BiH->c = 'H';
@@ -75,6 +76,8 @@ H  I  J  K
     BiA->c = 'A';
     BiA->lBi = BiB;
     BiA->rBi = BiC;
+    
+    return BiA;
 }
 
 
@@ -95,9 +98,9 @@ void MidOrderSorting(BiTree *T) {
     if (T == NULL) {
         return;
     }
-    PreOrderSorting(T->lBi);
+    MidOrderSorting(T->lBi);
     printf(" %c ",T->c);
-    PreOrderSorting(T->rBi);
+    MidOrderSorting(T->rBi);
 }
 
 
@@ -106,8 +109,8 @@ void AftOrderSorting(BiTree *T) {
     if (T == NULL) {
         return;
     }
-    PreOrderSorting(T->lBi);
-    PreOrderSorting(T->rBi);
+    AftOrderSorting(T->lBi);
+    AftOrderSorting(T->rBi);
     printf(" %c ",T->c);
 }
 
@@ -124,5 +127,89 @@ void ExchangeBitree(BiTree *T) {
     ExchangeBitree(T->rBi);
 }
 
+
+/*
+         A
+     B        C
+  D     E   F    G
+H  I  J  K
+*/
+///> 前序遍历。C语言实现栈数据结构
+void NonRecursivePreOrderSorting(BiTree *T,int size) {
+    BiTree *stack[size];
+    BiTree *temp = T;
+        
+    while (temp != NULL || !isEmpty()) {
+        
+        /// 输出左面子叶
+        while (temp != NULL) {
+            push(stack, temp);
+            printf(" %c ",temp->c);
+            temp = temp->lBi;
+        }
+                
+        if (!isEmpty()) {
+            temp = pop(stack);
+            temp = temp->rBi;
+        }
+    }
+}
+
+
+///> 中序遍历
+void NonRecursiveMidOrderSorting(BiTree *T,int size) {
+    BiTree *stack[size];
+    BiTree *temp = T;
+        
+    while (temp != NULL || !isEmpty()) {
+        
+        /// 输出左面子叶
+        while (temp != NULL) {
+            push(stack, temp);
+            temp = temp->lBi;
+        }
+                
+        if (!isEmpty()) {
+            temp = pop(stack);
+            printf(" %c ",temp->c);
+            temp = temp->rBi;
+        }
+    }
+}
+///> 后续遍历
+void NonRecursiveAftOrderSorting(BiTree *T,int size);
+
+
+
+
+
+///< 非递归实现 按层排序
+void LevelTraversal(BiTree *T,int size) {
+    if (T) {
+        int index = 0;
+        
+        ///< 指的是节点数
+        int i = 0;
+        
+        BiTree *queue[size];
+        queue[index] = T;
+        
+        while (i <= index) {
+            if (queue[i]->lBi) {
+                index++;
+                queue[index] = queue[i]->lBi;
+            }
+            if (queue[i]->rBi) {
+                index++;
+                queue[index] = queue[i]->rBi;
+            }
+            i++;
+        }
+        
+        for (NSInteger i = 0; i < size; i++) {
+            printf(" %c ",queue[i]->c);
+        }
+    }
+}
 
 @end

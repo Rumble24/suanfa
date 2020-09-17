@@ -26,7 +26,7 @@ typedef struct tree {
   D     E   F    G
 H  I  J  K
 */
-- (void)createTree;
+BiTree *createTree(void);
 
 
 ///> 前序遍历
@@ -37,6 +37,19 @@ void MidOrderSorting(BiTree *T);
 void AftOrderSorting(BiTree *T);
 ///> 反转 左右子叶交换
 void ExchangeBitree(BiTree *T);
+
+
+///> 前序遍历
+void NonRecursivePreOrderSorting(BiTree *T,int size);
+///> 中序遍历
+void NonRecursiveMidOrderSorting(BiTree *T,int size);
+///> 后续遍历
+void NonRecursiveAftOrderSorting(BiTree *T,int size);
+
+
+///> 非递归实现[按层输出] 主要的原理就是我们留一个数组 来保留要输出的数据
+void LevelTraversal(BiTree *T,int size);
+
 
 
 @end
