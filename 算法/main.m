@@ -37,6 +37,27 @@ int main(int argc, const char * argv[]) {
     NSLog(@"count %d",linkListCount(list));
 
     
+    ///< 二叉树
+    printf(" \n二叉树非递归实现\n ");
+    BiTree *binaryTree = createTree();
+    /// 递归
+    PreOrderSorting(binaryTree);
+    printf(" \n ");
+    MidOrderSorting(binaryTree);
+    printf(" \n ");
+    AftOrderSorting(binaryTree);
+    printf(" \n ");
+    LevelTraversal(binaryTree,11);
+    printf(" \n ");
+    
+    printf(" \n非递归实现\n ");
+    
+    /// 非递归实现
+    NonRecursivePreOrderSorting(binaryTree,11);
+    printf(" \n ");
+    NonRecursiveMidOrderSorting(binaryTree,11);
+    printf(" \n ");
+
     
     return 0;
 }

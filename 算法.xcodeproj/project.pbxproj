@@ -10,6 +10,7 @@
 		64A58AC324FCD54D00DD1999 /* MergeArr.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A58AC224FCD54D00DD1999 /* MergeArr.m */; };
 		64A58AC924FD00C100DD1999 /* FullPermutation.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A58AC824FD00C100DD1999 /* FullPermutation.m */; };
 		64A58ACC24FD07AA00DD1999 /* BinaryChop.m in Sources */ = {isa = PBXBuildFile; fileRef = 64A58ACB24FD07AA00DD1999 /* BinaryChop.m */; };
+		64FE50982513479700763FE2 /* CStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FE50972513479700763FE2 /* CStack.m */; };
 		9B85E7D024FB446F004A249A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85E7CF24FB446F004A249A /* main.m */; };
 		9B85E7D824FB4497004A249A /* Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85E7D724FB4497004A249A /* Sort.m */; };
 		9B85E7DE24FB4EE0004A249A /* Tree.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B85E7DD24FB4EE0004A249A /* Tree.m */; };
@@ -36,6 +37,8 @@
 		64A58AC824FD00C100DD1999 /* FullPermutation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullPermutation.m; sourceTree = "<group>"; };
 		64A58ACA24FD07AA00DD1999 /* BinaryChop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinaryChop.h; sourceTree = "<group>"; };
 		64A58ACB24FD07AA00DD1999 /* BinaryChop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BinaryChop.m; sourceTree = "<group>"; };
+		64FE50962513479700763FE2 /* CStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CStack.h; sourceTree = "<group>"; };
+		64FE50972513479700763FE2 /* CStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CStack.m; sourceTree = "<group>"; };
 		9B85E7CC24FB446F004A249A /* 算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "算法"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B85E7CF24FB446F004A249A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B85E7D624FB4497004A249A /* Sort.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sort.h; sourceTree = "<group>"; };
@@ -93,6 +96,8 @@
 				64A58ACB24FD07AA00DD1999 /* BinaryChop.m */,
 				9BA9627A2501329900B68D2D /* LRUCache.h */,
 				9BA9627B2501329900B68D2D /* LRUCache.m */,
+				64FE50962513479700763FE2 /* CStack.h */,
+				64FE50972513479700763FE2 /* CStack.m */,
 			);
 			path = "算法";
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 				9B85E7E124FB4F4C004A249A /* LinkedList.m in Sources */,
 				64A58AC924FD00C100DD1999 /* FullPermutation.m in Sources */,
 				9BA9627C2501329900B68D2D /* LRUCache.m in Sources */,
+				64FE50982513479700763FE2 /* CStack.m in Sources */,
 				9B85E7D824FB4497004A249A /* Sort.m in Sources */,
 				64A58ACC24FD07AA00DD1999 /* BinaryChop.m in Sources */,
 				64A58AC324FCD54D00DD1999 /* MergeArr.m in Sources */,
@@ -281,6 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -289,6 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
