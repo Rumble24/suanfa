@@ -87,8 +87,21 @@ void insertList(LinkList *list,int n,int value) {
     }
     
 }
-///> 删除链表
-void deletList(LinkList *list,int n);
+///> 删除链表 h 0 1 2 3 4 5
+void deletList(LinkList *list,int n) {
+    LinkList *temp = list;
+    LinkList *current = temp;
+    int i = 0;
+    while (temp->next != NULL) {
+        current = temp;
+        temp = temp->next;
+        if (i == n) {
+            current->next = temp->next;
+            break;
+        }
+        i++;
+    }
+}
 ///> 链表反转  h 0 1 2 3 4 5 6 7 8 9
 LinkList* reverseList(LinkList*head) {
     LinkList *node0 = head->next;
@@ -123,5 +136,37 @@ LinkList* addnode1Numbers(LinkList* l1, LinkList* l2);
 int linkListValue(LinkList * h);
 ///> 输出位数100 输出 3
 int getIntSize(int number);
+
+
+
+/// 双向链表 h 1 2 3 4 5
+TwoWayLinkedList *reverseTwoWayLinkedList(TwoWayLinkedList*head) {
+    
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    
+    TwoWayLinkedList *temp;
+    TwoWayLinkedList *current = head->next;
+    while (current != NULL) {
+        temp = current->pre;
+        current->pre = current->next;
+        current->next = temp;
+        if (current->pre == NULL) {
+            break;
+        } else {
+            current = current->pre;
+        }
+    }
+    head->next->next = NULL;
+    head->next = current;
+    return head;
+}
+
+
+
+
+
+
 
 @end
