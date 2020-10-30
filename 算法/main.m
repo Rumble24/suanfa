@@ -5,7 +5,11 @@
 //  Created by rumble on 2020/8/30.
 //  Copyright © 2020 rumble. All rights reserved.
 //
+// 动画： https://github.com/MisterBooo/LeetCodeAnimation
 
+//他的博客：https://www.cxyxiaowu.com/leetcodeanimation
+
+// 基础算法题：https://www.zhihu.com/question/24964987
 #import <Foundation/Foundation.h>
 #import "Sort.h"
 #import "LinkedList.h"
@@ -63,22 +67,3 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-/*
- 
- 9. 对数组arr内的元素组合进行全排列？
- input: [1, 2, 3]
- output: [123, 132, 213, 231, 312, 321]
- 
- 
- 10.合并N个升序数组为一个升序数组？
- input: [[Int]]
- output: [Int]
- 
- 
- 4.leetcode 134（https://leetcode-cn.com/problems/gas-station/）
- 
- 16，无重复字符的最长子串
- 
- 37.二分查找
- 
- */

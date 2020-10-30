@@ -13,6 +13,14 @@ typedef struct number {
     struct number *next;
 } LinkList;
 
+
+
+typedef struct student {
+    int score;
+    struct student *pre;
+    struct student *next;
+} TwoWayLinkedList;
+
 /// 头结点
 /// 链表的创建，修改，删除，插入，输出，排序，反序
 @interface LinkedList : NSObject
@@ -64,5 +72,6 @@ int getIntSize(int number);
 LinkList * mergeOrderedLinkList(LinkList *LA,LinkList *LB);
 /// 递归实现
 LinkList* mergeTwoLists(LinkList* l1,LinkList* l2);
+TwoWayLinkedList *reverseTwoWayLinkedList(TwoWayLinkedList*head);
 @end
 
