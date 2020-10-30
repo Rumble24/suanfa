@@ -59,5 +59,10 @@ int linkListValue(LinkList * h);
 ///> 输出位数100 输出 3
 int getIntSize(int number);
 
+
+#pragma mark - 合并有序链表
+LinkList * mergeOrderedLinkList(LinkList *LA,LinkList *LB);
+/// 递归实现
+LinkList* mergeTwoLists(LinkList* l1,LinkList* l2);
 @end
 

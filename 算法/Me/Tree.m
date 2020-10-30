@@ -189,21 +189,24 @@ void LevelTraversal(BiTree *T,int size) {
         int index = 0;
         
         ///< 指的是节点数
-        int i = 0;
+        int node = 0;
         
         BiTree *queue[size];
         queue[index] = T;
         
-        while (i <= index) {
-            if (queue[i]->lBi) {
+        while (node <= index) {
+            NSLog(@"== %d",node);
+            if (queue[node]->lBi) {
                 index++;
-                queue[index] = queue[i]->lBi;
+                queue[index] = queue[node]->lBi;
+                NSLog(@"lBi %d",index);
             }
-            if (queue[i]->rBi) {
+            if (queue[node]->rBi) {
                 index++;
-                queue[index] = queue[i]->rBi;
+                queue[index] = queue[node]->rBi;
+                NSLog(@"rBi %d",index);
             }
-            i++;
+            node++;
         }
         
         for (NSInteger i = 0; i < size; i++) {
@@ -212,4 +215,6 @@ void LevelTraversal(BiTree *T,int size) {
     }
 }
 
+
+/// 双向链表[key value]
 @end

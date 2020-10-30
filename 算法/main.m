@@ -9,13 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "Sort.h"
 #import "LinkedList.h"
-#import "Tree.h"
+//#import "Tree.h"
 #import "MergeArr.h"
 
 
 int main(int argc, const char * argv[]) {
     
     NSArray *arr = @[@(29),@(23),@(54),@(3),@(34),@(4),@(34),@(54),@(24),@(40)];
+    [arr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSLog(@"%@",obj);
+    }];
+    
+    
     NSMutableArray *marr = arr.mutableCopy;
     
     ///< 快排

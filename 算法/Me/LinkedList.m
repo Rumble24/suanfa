@@ -124,4 +124,75 @@ int linkListValue(LinkList * h);
 ///> 输出位数100 输出 3
 int getIntSize(int number);
 
+
+
+LinkList *mergeOrderedLinkList(LinkList *LA,LinkList *LB) {
+    
+    LinkList *la = LA;
+    LinkList *result = LA;
+    
+    /// 移动指针
+    LA = LA->next;
+    LB = LB->next;
+    
+    la->next = NULL;
+    
+    while (LA != NULL && LB != NULL) {
+        if (LA->score < LB->score) {
+            la->next = LA;
+            la = LA;
+            LA = LA->next;
+        } else {
+            la->next = LB;
+            la = LB;
+            LB = LB->next;
+        }
+    }
+    
+    /// 若其中一个链表的结点已经全接在新表中则将另一个链表的剩余结点接在新表的后面
+    if (LA) {
+        la->next = LA;
+    }
+    
+    if(LB) {
+        la->next = LB;
+    }
+    return result;
+}
+
+/// 递归实现
+LinkList* mergeTwoLists(LinkList* l1,LinkList* l2) {
+    if (!l1)
+        return l2;
+    else if (!l2)
+        return l1;
+    else {
+        if (l1->score < l2->score) {
+            l1->next = mergeTwoLists(l1->next, l2);
+            return l1;
+        }
+        else {
+            l2->next = mergeTwoLists(l1, l2->next);
+            return l2;
+        }
+    }
+}
+
+
+LinkList *mergeTwoList(LinkList* l1,LinkList* l2) {
+    if (!l1) {
+        return l2;
+    } else if (!l2) {
+        return l1;
+    } else {
+        if (l1->score < l2->score) {
+            l1->next = mergeTwoList(l1->next, l2);
+            return l1;
+        } else {
+            l2->next = mergeTwoList(l1, l1->next);
+            return l2;
+        }
+    }
+}
+
 @end
